@@ -19,6 +19,10 @@ public class SpaceVO {
 	private MultipartFile file; //첨부파일 
 	private String b_file=""; //실제서버에 저장한 파일명 
 	
+	// 기본 생성자
+	public SpaceVO() {
+		
+	}
 	
 	public String getS_name() {
 		return s_name;

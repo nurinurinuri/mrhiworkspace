@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.workspace.admin.space.dao.AdminSpaceDAO">
+
+	<!-- 사무공간 리스트 기본 조회 -->
+
+	<!-- 사무공간 공간명에 사용할 시퀀스 조회 -->
+	<select id="findSeq" resultType="int">
+		select space_seq.nextval
+		from dual
+	</select>
+	
+	<!-- 사무공간 등록 -->
+	<insert id="spaceInsert" parameterType="com.workspace.client.space.vo.SpaceVO">
+		insert into space_tbl (s_name, s_pop, s_type, s_price, s_exp, s_photo, s_note, s_state)
+		values (#{s_name}, #{s_pop}, #{s_type}, #{s_price}, #{s_exp}, #{s_photo}, #{s_note}, #{s_state})
+	</insert>
+</mapper>
