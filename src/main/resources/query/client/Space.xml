@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.workspace.client.space.dao.SpaceDAO">
+
+	<!-- 사무 공간 조회 -->
+	<select id="spacePrivateList" parameterType="space"
+		resultType="space">
+		SELECT s_name, s_photo
+		FROM space_tbl
+		WHERE s_pop = '사무공간'
+		ORDER BY s_name DESC
+	</select>
+
+
+	<!--사무공간 상세페이지 조회 -->
+	<select id="spacePrivateDetail" parameterType="space"
+		resultType="space">
+		SELECT
+		s_photo,s_exp,s_price
+		FROM space_tbl
+		WHERE s_name = #{s_name}
+	</select>
+</mapper>
+
