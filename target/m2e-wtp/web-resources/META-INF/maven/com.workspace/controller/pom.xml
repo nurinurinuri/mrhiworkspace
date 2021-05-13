@@ -54,6 +54,20 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>2.0.2</version>
 		</dependency>
+		<!-- JSON(jackson) -->
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind --> 
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.9</version>
+		</dependency>	
+		
+		<!-- file upload -->
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.4</version>
+		</dependency>
 		
 		<!-- AspectJ -->
 		<dependency>
