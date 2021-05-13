@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<!-- 기본 레이아웃 -->
+	<definition name="basic" template="/WEB-INF/views/admin/template/adminMainLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/admin/template/adminHeader.jsp" />
+		<put-attribute name="aside" value="" />
+		<put-attribute name="section" value="" />
+	</definition>
+
+	<!-- 메인 페이지 -->
+	<definition name="main" extends="basic">
+		<put-attribute name="aside" value="/WEB-INF/views/admin/template/adminAside2.jsp" />
+		<put-attribute name="section" value="/WEB-INF/views/admin/contract/adminContractInfo.jsp" />
+	</definition>
+	
+	<!-- 공간관리 페이지 -->
+	<definition name="admin/space/*" extends="basic">
+		<put-attribute name="aside" value="/WEB-INF/views/admin/template/adminAside1.jsp" />
+		<put-attribute name="section" value="/WEB-INF/views/admin/space/{1}.jsp" />
+	</definition>
+	
+	<!-- 입주관리 페이지 -->
+	<definition name="admin/contract/contractInfo" extends="basic">
+		<put-attribute name="aside" value="/WEB-INF/views/admin/template/adminAside2.jsp" />
+		<put-attribute name="section" value="/WEB-INF/views/admin/contract/adminContractInfo.jsp" />
+	</definition>
+	
+	<!-- 공용공간 예약관리 페이지 -->
+	<definition name="admin/contract/reserveInfo" extends="basic">
+		<put-attribute name="aside" value="/WEB-INF/views/admin/template/adminAside3.jsp" />
+		<put-attribute name="section" value="/WEB-INF/views/admin/contract/adminReserveInfo.jsp" />
+	</definition>
+	
+	<!-- 회원관리 페이지 -->
+	<definition name="admin/member/*" extends="basic">
+		<put-attribute name="aside" value="/WEB-INF/views/admin/template/adminAside4.jsp" />
+		<put-attribute name="section" value="/WEB-INF/views/admin/member/{1}.jsp" />
+	</definition>
+	
+	<!-- 공지사항 관리 페이지 -->
+	<definition name="admin/notice/*" extends="basic">
+		<put-attribute name="aside" value="/WEB-INF/views/admin/template/adminAside5.jsp" />
+		<put-attribute name="section" value="/WEB-INF/views/admin/notice/{1}.jsp" />
+	</definition>
+	
+	<!-- 자주묻는질문 관리 페이지 -->
+	<definition name="admin/qna/*" extends="basic">
+		<put-attribute name="aside" value="/WEB-INF/views/admin/template/adminAside5.jsp" />
+		<put-attribute name="section" value="/WEB-INF/views/admin/qna/{1}.jsp" />
+	</definition>
+	
+	<!-- 문의게시판 관리 페이지 -->
+	<definition name="admin/inquiry/*" extends="basic">
+		<put-attribute name="aside" value="/WEB-INF/views/admin/template/adminAside5.jsp" />
+		<put-attribute name="section" value="/WEB-INF/views/admin/inquiry/{1}.jsp" />
+	</definition>
+</tiles-definitions>
